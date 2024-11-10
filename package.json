@@ -1,0 +1,37 @@
+{
+  "name": "@zavoloklom/shareable-configs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Opinionated Shareable Configs by Zavoloklom.",
+  "license": "MIT",
+  "author": "Sergey Kupletsky <s.kupletsky@gmail.com> (https://github.com/zavoloklom)",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "nx run-many -t=build",
+    "lint": "nx run-many -t=build --projects=eslint-config,prettier-config --skip-nx-cache && nx run-many -t=lint --skip-nx-cache"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint/js": "9.31.0",
+    "@nx/eslint": "21.3.5",
+    "@nx/eslint-plugin": "21.3.5",
+    "@nx/js": "21.3.5",
+    "@nx/rollup": "21.3.5",
+    "@swc-node/register": "1.10.10",
+    "@swc/cli": "0.7.8",
+    "@swc/core": "1.13.2",
+    "@swc/helpers": "0.5.17",
+    "@types/node": "24.1.0",
+    "@zavoloklom/eslint-config": "workspace:*",
+    "@zavoloklom/prettier-config": "workspace:*",
+    "eslint": "9.31.0",
+    "nx": "21.3.5",
+    "prettier": "3.6.2",
+    "rollup": "4.45.1",
+    "swc-loader": "0.2.6",
+    "tslib": "2.8.1",
+    "typescript": "5.8.3"
+  }
+}
