@@ -1,0 +1,118 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/eslint.config.mjs"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/ci.yml"
+    ]
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        },
+        "build": {
+          "targetName": "build",
+          "configName": "tsconfig.lib.json",
+          "buildDepsName": "build-deps",
+          "watchDepsName": "watch-deps"
+        }
+      }
+    },
+    {
+      "plugin": "@nx/rollup/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
+  ],
+  "defaultBase": "main",
+  "cli": {
+    "defaultCollection": "nx-release"
+  },
+  "release": {
+    "projects": [
+      "packages/*"
+    ],
+    "projectsRelationship": "independent",
+    "releaseTagPattern": "{projectName}/{version}",
+    "version": {
+      //      "git": {
+      //        "commitMessage": "release: {projectName} {version}"
+      //      },
+      //      "conventionalCommits": {
+      //        "types": {
+      //          "feat": {
+      //            "semverBump": "minor"
+      //          },
+      //          "fix": {
+      //            "semverBump": "patch"
+      //          },
+      //          "refactor": {
+      //            "semverBump": "none"
+      //          },
+      //          "perf": {
+      //            "semverBump": "patch"
+      //          },
+      //          "test": {
+      //            "semverBump": "none"
+      //          },
+      //          "deps": {
+      //            "semverBump": "none"
+      //          },
+      //          "docs": {
+      //            "semverBump": "none"
+      //          },
+      //          "ci": {
+      //            "semverBump": "none"
+      //          },
+      //          "chore": {
+      //            "semverBump": "none"
+      //          },
+      //          "revert": {
+      //            "semverBump": "patch"
+      //          },
+      //          "release": {
+      //            "semverBump": "none",
+      //            "changelog": {
+      //              "hidden": true
+      //            }
+      //          }
+      //        }
+      //      }
+    },
+    "changelog": {
+      "projectChangelogs": {
+        "createRelease": "github",
+        "renderOptions": {
+          "authors": false,
+          "applyUsernameToAuthors": false,
+          "commitReferences": true,
+          "versionTitleDate": true
+        }
+      }
+    }
+  },
+  "targetDependencies": {
+    "version": {
+      "preVersionCommand": "npx nx run-many -t build"
+    }
+  }
+}
