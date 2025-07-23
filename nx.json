@@ -41,7 +41,9 @@
       "options": {
         "targetName": "lint"
       },
-      "exclude": ["eslint.config.mjs"]
+      "exclude": [
+        "eslint.config.mjs"
+      ]
     }
   ],
   "defaultBase": "main",
@@ -54,50 +56,50 @@
     ],
     "projectsRelationship": "independent",
     "releaseTagPattern": "{projectName}/{version}",
+    "git": {
+      "commitMessage": "release: publish packages [skip ci]"
+    },
     "version": {
-      //      "git": {
-      //        "commitMessage": "release: {projectName} {version}"
-      //      },
-      //      "conventionalCommits": {
-      //        "types": {
-      //          "feat": {
-      //            "semverBump": "minor"
-      //          },
-      //          "fix": {
-      //            "semverBump": "patch"
-      //          },
-      //          "refactor": {
-      //            "semverBump": "none"
-      //          },
-      //          "perf": {
-      //            "semverBump": "patch"
-      //          },
-      //          "test": {
-      //            "semverBump": "none"
-      //          },
-      //          "deps": {
-      //            "semverBump": "none"
-      //          },
-      //          "docs": {
-      //            "semverBump": "none"
-      //          },
-      //          "ci": {
-      //            "semverBump": "none"
-      //          },
-      //          "chore": {
-      //            "semverBump": "none"
-      //          },
-      //          "revert": {
-      //            "semverBump": "patch"
-      //          },
-      //          "release": {
-      //            "semverBump": "none",
-      //            "changelog": {
-      //              "hidden": true
-      //            }
-      //          }
-      //        }
-      //      }
+      "conventionalCommits": {
+        "types": {
+          "feat": {
+            "semverBump": "minor"
+          },
+          "fix": {
+            "semverBump": "patch"
+          },
+          "refactor": {
+            "semverBump": "none"
+          },
+          "perf": {
+            "semverBump": "patch"
+          },
+          "test": {
+            "semverBump": "none"
+          },
+          "deps": {
+            "semverBump": "none"
+          },
+          "docs": {
+            "semverBump": "none"
+          },
+          "ci": {
+            "semverBump": "none"
+          },
+          "chore": {
+            "semverBump": "none"
+          },
+          "revert": {
+            "semverBump": "patch"
+          },
+          "release": {
+            "semverBump": "none",
+            "changelog": {
+              "hidden": true
+            }
+          }
+        }
+      }
     },
     "changelog": {
       "projectChangelogs": {
