@@ -1,6 +1,21 @@
 {
   "name": "@zavoloklom/prettier-config",
   "version": "1.0.0",
+  "description": "Prettier shareable config.",
+  "keywords": [
+    "prettier",
+    "config"
+  ],
+  "homepage": "https://github.com/zavoloklom/shareable-configs/tree/main/packages/prettier-config",
+  "bugs": {
+    "url": "https://github.com/zavoloklom/shareable-configs/issues"
+  },
+  "repository": {
+    "url": "https://github.com/zavoloklom/shareable-configs.git"
+  },
+  "funding": "https://github.com/zavoloklom#how-to-support",
+  "license": "MIT",
+  "author": "Sergey Kupletsky <s.kupletsky@gmail.com> (https://github.com/zavoloklom)",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
@@ -15,6 +30,9 @@
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.esm.d.ts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "prettier-plugin-packagejson": "2.5.19"
   },
@@ -25,8 +43,7 @@
     "prettier": ">=3.0.0"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "nx": {
     "name": "prettier-config"
