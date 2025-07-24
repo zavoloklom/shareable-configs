@@ -51,9 +51,6 @@ const config: Linter.Config[] = defineConfig([
       parserOptions: {
         ecmaVersion: 'latest',
         projectService: true,
-        // @ts-expect-error IDK
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        tsconfigRootDir: import.meta.dirname,
       },
     },
   },
