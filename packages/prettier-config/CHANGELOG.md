@@ -1,3 +1,7 @@
+## 1.0.4 (2025-09-08)
+
+This was a version bump only for prettier-config to align it with other projects, there were no code changes.
+
 ## 1.0.3 (2025-09-08)
 
 ### 🩹 Fixes
