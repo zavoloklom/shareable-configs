@@ -20,7 +20,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.14.0
           registry-url: https://registry.npmjs.org/
           cache: npm
 
@@ -44,7 +44,7 @@ jobs:
       - name: Run affected release
         run: |
           npm config set //registry.npmjs.org/:_authToken "${{ secrets.NODE_AUTH_TOKEN }}"
-          npx nx release --yes
+          npm_config_legacy_peer_deps=false npx nx release --yes
         env:
           NPM_CONFIG_PROVENANCE: true
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
