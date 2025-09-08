@@ -278,10 +278,16 @@ const config: Linter.Config[] = defineConfig([
           selector: ['function', 'method'],
           format: ['camelCase'],
         },
+        // Static Class properties
+        {
+          selector: 'classProperty',
+          modifiers: ['static'],
+          format: ['UPPER_CASE'],
+        },
         // Allow PascalCase for React components (JSX)
         {
           selector: 'variable',
-          format: ['PascalCase'],
+          format: ['PascalCase', 'UPPER_CASE'],
           modifiers: ['exported'],
           filter: {
             regex: '^[A-Z]',
