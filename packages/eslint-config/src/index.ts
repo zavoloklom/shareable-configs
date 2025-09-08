@@ -166,6 +166,7 @@ const config: Linter.Config[] = defineConfig([
       'one-var': [2, 'never'],
       'id-length': [2, { exceptions: ['a', 'b', 'i', 'j', 't', 'x', 'y'] }],
       'sort-keys': 0,
+      'prefer-destructuring': 0,
       'no-magic-numbers': [
         2,
         {
