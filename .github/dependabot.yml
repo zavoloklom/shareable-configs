@@ -1,0 +1,36 @@
+version: 2
+updates:
+  # Github Actions
+  - package-ecosystem: github-actions
+    directory: /
+    commit-message:
+      prefix: ci(deps)
+    schedule:
+      interval: weekly
+
+  # Root package.json (workspace-wide dependencies)
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: deps
+      prefix-development: deps(dev)
+
+  # eslint-config
+  - package-ecosystem: npm
+    directory: /packages/eslint-config
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: deps(eslint-config)
+      prefix-development: deps(dev)
+
+  # prettier-config
+  - package-ecosystem: npm
+    directory: /packages/prettier-config
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: deps(prettier-config)
+      prefix-development: deps(dev)
