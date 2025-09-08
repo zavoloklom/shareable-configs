@@ -164,7 +164,7 @@ const config: Linter.Config[] = defineConfig([
     name: 'Rules Adjustments',
     rules: {
       'one-var': [2, 'never'],
-      'id-length': [2, { exceptions: ['a', 'b', 'i', 'j', 't'] }],
+      'id-length': [2, { exceptions: ['a', 'b', 'i', 'j', 't', 'x', 'y'] }],
       'sort-keys': 0,
       'no-magic-numbers': [
         2,
