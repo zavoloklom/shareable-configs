@@ -106,7 +106,7 @@ const config: Linter.Config[] = defineConfig([
       'import/newline-after-import': 2,
       'import/no-absolute-path': 2,
       'import/no-amd': 2,
-      // Use https://www.npmjs.com/package/madge instead
+      // Use https://www.npmjs.com/package/madge instead for circular dependencies
       'import/no-cycle': 0,
       'import/no-duplicates': 2,
       'import/no-dynamic-require': 2,
